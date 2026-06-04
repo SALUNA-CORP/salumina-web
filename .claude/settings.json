@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npm run dev)",
+      "PowerShell(Get-Process -Id 52980)",
+      "PowerShell(Stop-Process -Id 52980 -Force)",
+      "PowerShell(npm run build 2>&1)",
+      "PowerShell(Get-Process node -ErrorAction SilentlyContinue)",
+      "PowerShell(Stop-Process -Force)",
+      "PowerShell(npm run build)",
+      "PowerShell(Move-Item -Path \"app\\\\\\(public\\)\\\\register\\\\page.tsx\" -Destination \"app\\\\\\(public\\)\\\\register\\\\page-old.tsx.bak\" -Force)",
+      "PowerShell(Move-Item -Path \"app\\\\\\(public\\)\\\\register\\\\page-new.tsx\" -Destination \"app\\\\\\(public\\)\\\\register\\\\page.tsx\" -Force)",
+      "Bash(git add *)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\frane\\Proyect\\Proyectos React\\SALUMINA-WEB\\.next"
+    ]
+  }
+}

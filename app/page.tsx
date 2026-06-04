@@ -56,10 +56,17 @@ export default function Home() {
           </p>
         </div>
 
-        <nav style={{ display: 'flex', gap: 24 }}>
+        <nav style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
           <a href="#features" style={{ color: '#999', textDecoration: 'none' }}>Características</a>
           <a href="#pricing" style={{ color: '#999', textDecoration: 'none' }}>Planes</a>
-          <a href="#download" style={{
+          <a href="/login" style={{
+            color: '#22c55e',
+            textDecoration: 'none',
+            fontWeight: 600
+          }}>
+            Iniciar Sesión
+          </a>
+          <a href="/register" style={{
             background: '#22c55e',
             color: '#fff',
             padding: '8px 20px',
@@ -67,7 +74,7 @@ export default function Home() {
             textDecoration: 'none',
             fontWeight: 600
           }}>
-            Descargar
+            Registrarse
           </a>
         </nav>
       </header>
@@ -289,7 +296,8 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <button style={{
+              <a href="/register" style={{
+                display: 'block',
                 width: '100%',
                 background: plan.highlighted ? '#000' : '#22c55e',
                 color: '#fff',
@@ -298,10 +306,12 @@ export default function Home() {
                 padding: 14,
                 fontSize: 16,
                 fontWeight: 600,
-                cursor: 'pointer'
+                cursor: 'pointer',
+                textDecoration: 'none',
+                textAlign: 'center'
               }}>
                 {plan.cta}
-              </button>
+              </a>
             </div>
           ))}
         </div>
