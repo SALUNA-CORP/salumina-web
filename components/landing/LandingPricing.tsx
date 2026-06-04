@@ -14,24 +14,24 @@ export function LandingPricing({
 }: LandingPricingProps) {
   const plans = [
     {
-      name: 'Básico',
-      bookmakers: 1,
-      price: basePrice + bookmakerPrice * 1,
+      name: 'Inicial',
+      bookmakers: 2,
+      price: basePrice + bookmakerPrice * 2,
       features: [
-        '1 casa de apuestas',
+        '2 casas de apuestas',
         'Escaneo cada 5 min',
-        'Calculadora básica',
+        'Calculadora de arbitraje',
         'Soporte por email',
         'Red MLM binaria',
         'Comisiones directas',
       ],
     },
     {
-      name: 'Pro',
-      bookmakers: 2,
-      price: basePrice + bookmakerPrice * 2,
+      name: 'Estándar',
+      bookmakers: 3,
+      price: basePrice + bookmakerPrice * 3,
       features: [
-        '2 casas de apuestas',
+        '3 casas de apuestas',
         'Escaneo cada 2 min',
         'Calculadora avanzada',
         'Soporte prioritario',
@@ -41,15 +41,15 @@ export function LandingPricing({
       highlighted: true,
     },
     {
-      name: 'Elite',
+      name: 'Premium',
       bookmakers: totalBookmakers,
       price: basePrice + bookmakerPrice * totalBookmakers,
       features: [
-        `${totalBookmakers} casas de apuestas`,
+        `Todas (${totalBookmakers}) las casas`,
         'Escaneo en tiempo real',
-        'Todas las funciones',
+        'Máximo potencial de arbitraje',
         'Soporte 24/7',
-        'Red MLM binaria completa',
+        'Red MLM completa',
         'Comisiones máximas',
       ],
     },
@@ -63,7 +63,10 @@ export function LandingPricing({
             Planes que se Adaptan a Ti
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Comienza con un bookmaker y escala según tus necesidades
+            <span className="text-blue-400 font-semibold">Activación: ${basePrice}</span> + <span className="text-green-400 font-semibold">${bookmakerPrice} por casa de apuestas</span>
+          </p>
+          <p className="text-sm text-gray-500 mt-2">
+            Mínimo 2 casas de apuestas para arbitraje
           </p>
         </div>
 

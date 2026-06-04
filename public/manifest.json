@@ -1,7 +1,7 @@
 {
-  "name": "Salumina - MLM & Sports Arbitrage",
-  "short_name": "Salumina",
-  "description": "Plataforma de marketing multinivel con acceso exclusivo al scanner de arbitrajes deportivos",
+  "name": "PolyBet - Arbitraje Deportivo & MLM",
+  "short_name": "PolyBet",
+  "description": "Plataforma de arbitraje deportivo con sistema MLM binario de 20 niveles",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

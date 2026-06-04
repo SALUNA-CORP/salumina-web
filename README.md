@@ -1,6 +1,6 @@
-# SALUMINA - Sistema Binario MLM con Suscripciones
+# PolyBet - Sistema de Arbitraje Deportivo con Red MLM
 
-Sistema completo de marketing multinivel binario con gestión de suscripciones para acceso a la app de arbitraje deportivo.
+Plataforma completa de arbitraje deportivo con sistema MLM binario de 20 niveles. Activa tu cuenta y selecciona tus casas de apuestas.
 
 ## 🚀 Características Implementadas
 
@@ -11,7 +11,8 @@ Sistema completo de marketing multinivel binario con gestión de suscripciones p
 - Logout funcional
 
 ### ✅ Sistema de Suscripciones
-- Precio base $20/mes + $5 por bookmaker
+- Activación: $20 + $5 por casa de apuestas
+- Mínimo 2 casas para arbitraje
 - Integración completa con Stripe
 - Webhooks automáticos
 - Selector de plan interactivo

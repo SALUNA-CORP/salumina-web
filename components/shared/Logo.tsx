@@ -28,7 +28,7 @@ export function Logo({ size = 'md', showText = true, href, className = '' }: Log
       <div className={`${sizeClasses[size]} relative flex-shrink-0`}>
         <Image
           src="/favicon.ico"
-          alt="Salumina Logo"
+          alt="PolyBet Logo"
           width={size === 'sm' ? 32 : size === 'md' ? 48 : size === 'lg' ? 64 : 96}
           height={size === 'sm' ? 32 : size === 'md' ? 48 : size === 'lg' ? 64 : 96}
           className="rounded-lg"
@@ -38,11 +38,11 @@ export function Logo({ size = 'md', showText = true, href, className = '' }: Log
       {showText && (
         <div className="flex flex-col">
           <span className={`font-bold text-gray-900 dark:text-white ${textSizeClasses[size]} leading-tight`}>
-            SALUMINA
+            PolyBet
           </span>
           {size !== 'sm' && (
             <span className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-              Sports & MLM
+              Arbitraje & MLM
             </span>
           )}
         </div>

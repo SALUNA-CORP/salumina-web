@@ -3,8 +3,8 @@ import './globals.css';
 import { ToastProvider } from '@/components/ui/toast';
 
 export const metadata: Metadata = {
-  title: 'Salumina - Sistema Binario y Arbitraje Deportivo',
-  description: 'Plataforma de marketing multinivel con acceso exclusivo al scanner de arbitrajes deportivos.',
+  title: 'PolyBet - Arbitraje Deportivo y Red MLM',
+  description: 'Plataforma de arbitraje deportivo con sistema MLM binario. Activa tu cuenta y selecciona tus casas de apuestas.',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
