@@ -17,16 +17,21 @@ interface Bookmaker {
 interface PlanSelectorProps {
   bookmakers: Bookmaker[];
   currentBookmakers?: number[];
+  basePrice: number;
+  bookmakerPrice: number;
 }
 
-export function PlanSelector({ bookmakers, currentBookmakers = [] }: PlanSelectorProps) {
+export function PlanSelector({
+  bookmakers,
+  currentBookmakers = [],
+  basePrice,
+  bookmakerPrice,
+}: PlanSelectorProps) {
   const [selectedBookmakers, setSelectedBookmakers] = useState<number[]>(currentBookmakers);
   const [currency, setCurrency] = useState<'USD' | 'COP'>('USD');
   const [loading, setLoading] = useState(false);
   const { showToast } = useToast();
 
-  const basePrice = 20;
-  const bookmakerPrice = 5;
   const totalPrice = basePrice + (selectedBookmakers.length * bookmakerPrice);
 
   const toggleBookmaker = (id: number) => {

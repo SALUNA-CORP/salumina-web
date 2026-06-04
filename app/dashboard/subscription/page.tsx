@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server';
+import { supabaseAdmin } from '@/lib/supabase/admin';
 import { redirect } from 'next/navigation';
 import { PlanSelector } from '@/components/subscription/PlanSelector';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -14,6 +15,15 @@ export default async function SubscriptionPage() {
   if (!user) {
     redirect('/login');
   }
+
+  // Get commission config for pricing
+  const { data: config } = await supabaseAdmin
+    .from('commission_config')
+    .select('base_subscription_price, bookmaker_price')
+    .maybeSingle();
+
+  const basePrice = config ? Number(config.base_subscription_price) : 20;
+  const bookmakerPrice = config ? Number(config.bookmaker_price) : 5;
 
   // Get active subscription
   const { data: subscription } = await supabase
@@ -125,7 +135,11 @@ export default async function SubscriptionPage() {
         </p>
       </div>
 
-      <PlanSelector bookmakers={bookmakers || []} />
+      <PlanSelector
+        bookmakers={bookmakers || []}
+        basePrice={basePrice}
+        bookmakerPrice={bookmakerPrice}
+      />
     </div>
   );
 }
