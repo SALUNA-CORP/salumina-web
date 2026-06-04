@@ -6,6 +6,13 @@ export default function Home() {
   const [referralCode, setReferralCode] = useState<string | null>(null)
 
   useEffect(() => {
+    // Detectar si es un reset password y redirigir
+    const hash = window.location.hash
+    if (hash.includes('access_token') && hash.includes('type=recovery')) {
+      window.location.href = `/reset-password${hash}`
+      return
+    }
+
     // Capturar código de referido desde URL
     const params = new URLSearchParams(window.location.search)
     const ref = params.get('ref')
