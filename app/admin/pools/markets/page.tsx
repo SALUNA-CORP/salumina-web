@@ -16,7 +16,7 @@ export default async function AdminMarketsPage() {
 
   // Check if user is admin
   const { data: userData } = await supabaseAdmin
-    .from('users')
+    .from('user_profiles')
     .select('role')
     .eq('id', user.id)
     .single();

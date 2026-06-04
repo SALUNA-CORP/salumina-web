@@ -3,7 +3,7 @@
 -- ================================================
 
 -- Insert sample markets
--- Note: Replace 'YOUR_ADMIN_USER_ID' with actual superadmin user_id
+-- Note: Uses existing superadmin from user_profiles table
 
 -- Market 1: Junior vs Atlético Nacional (Fútbol)
 INSERT INTO markets (
@@ -33,7 +33,7 @@ INSERT INTO markets (
   100.00,
   500.00,
   NULL,
-  (SELECT id FROM users WHERE role = 'superadmin' LIMIT 1)
+  (SELECT id FROM user_profiles WHERE role = 'superadmin' LIMIT 1)
 );
 
 -- Market 2: Elecciones Presidenciales Colombia 2026
@@ -64,7 +64,7 @@ INSERT INTO markets (
   100.00,
   500.00,
   NULL,
-  (SELECT id FROM users WHERE role = 'superadmin' LIMIT 1)
+  (SELECT id FROM user_profiles WHERE role = 'superadmin' LIMIT 1)
 );
 
 -- Market 3: Bitcoin alcanza $100,000 USD en 2026 (Predicción)
@@ -95,7 +95,7 @@ INSERT INTO markets (
   100.00,
   500.00,
   NULL,
-  (SELECT id FROM users WHERE role = 'superadmin' LIMIT 1)
+  (SELECT id FROM user_profiles WHERE role = 'superadmin' LIMIT 1)
 );
 
 -- Market 4: Colombia clasifica al Mundial 2026 (Deportes - Predicción)
@@ -126,7 +126,7 @@ INSERT INTO markets (
   100.00,
   500.00,
   NULL,
-  (SELECT id FROM users WHERE role = 'superadmin' LIMIT 1)
+  (SELECT id FROM user_profiles WHERE role = 'superadmin' LIMIT 1)
 );
 
 -- Market 5: Ganador Copa América 2024 (Ejemplo de mercado cerrado para demo)
@@ -158,12 +158,12 @@ INSERT INTO markets (
   'resolved',
   0, -- Argentina won (index 0)
   'https://www.conmebol.com/es/copa-america-2024-argentina-campeon',
-  (SELECT id FROM users WHERE role = 'superadmin' LIMIT 1),
+  (SELECT id FROM user_profiles WHERE role = 'superadmin' LIMIT 1),
   '2024-07-14 23:30:00-05',
   1.00,
   100.00,
   500.00,
-  (SELECT id FROM users WHERE role = 'superadmin' LIMIT 1)
+  (SELECT id FROM user_profiles WHERE role = 'superadmin' LIMIT 1)
 );
 
 -- Comments
