@@ -17,7 +17,8 @@
       "Bash(git commit -m 'Fix supabaseAdmin lazy initialization for build time *)",
       "Bash(git commit -m 'Fix supabaseAdmin Proxy types and binding *)",
       "Bash(git commit -m 'Add env vars validation in middleware *)",
-      "Bash(cp \"C:\\\\Users\\\\frane\\\\Proyect\\\\Proyectos React\\\\SALUMINA SPORTS DESKTOP\\\\resources\\\\LogoPolyBet.ico\" \"C:\\\\Users\\\\frane\\\\Proyect\\\\Proyectos React\\\\SALUMINA-WEB\\\\public\\\\favicon.ico\")"
+      "Bash(cp \"C:\\\\Users\\\\frane\\\\Proyect\\\\Proyectos React\\\\SALUMINA SPORTS DESKTOP\\\\resources\\\\LogoPolyBet.ico\" \"C:\\\\Users\\\\frane\\\\Proyect\\\\Proyectos React\\\\SALUMINA-WEB\\\\public\\\\favicon.ico\")",
+      "Bash(git commit -m 'Add environment variables documentation and secrets *)"
     ],
     "additionalDirectories": [
       "c:\\Users\\frane\\Proyect\\Proyectos React\\SALUMINA-WEB\\.next",
