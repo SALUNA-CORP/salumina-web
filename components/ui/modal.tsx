@@ -13,6 +13,7 @@ interface ModalProps {
   cancelText?: string;
   variant?: 'default' | 'destructive';
   loading?: boolean;
+  children?: React.ReactNode;
 }
 
 export function Modal({
@@ -25,6 +26,7 @@ export function Modal({
   cancelText = 'Cancelar',
   variant = 'default',
   loading = false,
+  children,
 }: ModalProps) {
   if (!isOpen) return null;
 
@@ -53,6 +55,11 @@ export function Modal({
         {/* Description */}
         {description && (
           <p className="text-sm text-gray-600 mb-6">{description}</p>
+        )}
+
+        {/* Children Content */}
+        {children && (
+          <div className="mb-6">{children}</div>
         )}
 
         {/* Actions */}
