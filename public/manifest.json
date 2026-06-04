@@ -1,0 +1,45 @@
+{
+  "name": "Salumina - MLM & Sports Arbitrage",
+  "short_name": "Salumina",
+  "description": "Plataforma de marketing multinivel con acceso exclusivo al scanner de arbitrajes deportivos",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["business", "finance", "sports"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "Acceso rápido al panel de control",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "/favicon.ico",
+          "sizes": "any"
+        }
+      ]
+    },
+    {
+      "name": "Mi Red",
+      "short_name": "Red",
+      "description": "Ver mi red binaria",
+      "url": "/dashboard/network",
+      "icons": [
+        {
+          "src": "/favicon.ico",
+          "sizes": "any"
+        }
+      ]
+    }
+  ]
+}

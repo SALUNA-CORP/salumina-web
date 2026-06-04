@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
+import { Logo } from '@/components/shared/Logo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -74,9 +75,12 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 px-4">
       <div className="w-full max-w-md">
         <div className="bg-white rounded-2xl shadow-xl p-8">
+          <div className="flex justify-center mb-8">
+            <Logo size="lg" />
+          </div>
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900">Salumina</h1>
-            <p className="text-gray-600 mt-2">Inicia sesión en tu cuenta</p>
+            <h2 className="text-2xl font-bold text-gray-900">Iniciar Sesión</h2>
+            <p className="text-gray-600 mt-2">Accede a tu cuenta</p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-6">

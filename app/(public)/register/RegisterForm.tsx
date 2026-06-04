@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
+import { Logo } from '@/components/shared/Logo';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -121,8 +122,11 @@ export function RegisterForm() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center px-4">
       <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
+        <div className="flex justify-center mb-6">
+          <Logo size="lg" />
+        </div>
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Crear Cuenta</h1>
+          <h2 className="text-2xl font-bold text-gray-900">Crear Cuenta</h2>
           <p className="text-gray-600 mt-2">Únete a Salumina</p>
         </div>
 

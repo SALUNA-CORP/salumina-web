@@ -1,0 +1,9 @@
+# Robots.txt for Salumina
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://salumina-web.vercel.app/sitemap.xml

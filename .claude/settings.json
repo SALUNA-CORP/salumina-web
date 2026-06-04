@@ -10,10 +10,18 @@
       "PowerShell(npm run build)",
       "PowerShell(Move-Item -Path \"app\\\\\\(public\\)\\\\register\\\\page.tsx\" -Destination \"app\\\\\\(public\\)\\\\register\\\\page-old.tsx.bak\" -Force)",
       "PowerShell(Move-Item -Path \"app\\\\\\(public\\)\\\\register\\\\page-new.tsx\" -Destination \"app\\\\\\(public\\)\\\\register\\\\page.tsx\" -Force)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git commit -m 'Fix Modal component to accept children prop *)",
+      "Bash(git commit -m 'Fix supabaseAdmin lazy initialization for build time *)",
+      "Bash(git commit -m 'Fix supabaseAdmin Proxy types and binding *)",
+      "Bash(git commit -m 'Add env vars validation in middleware *)",
+      "Bash(cp \"C:\\\\Users\\\\frane\\\\Proyect\\\\Proyectos React\\\\SALUMINA SPORTS DESKTOP\\\\resources\\\\LogoPolyBet.ico\" \"C:\\\\Users\\\\frane\\\\Proyect\\\\Proyectos React\\\\SALUMINA-WEB\\\\public\\\\favicon.ico\")"
     ],
     "additionalDirectories": [
-      "c:\\Users\\frane\\Proyect\\Proyectos React\\SALUMINA-WEB\\.next"
+      "c:\\Users\\frane\\Proyect\\Proyectos React\\SALUMINA-WEB\\.next",
+      "C:\\Users\\frane\\Proyect\\Proyectos React\\SALUMINA SPORTS DESKTOP\\resources"
     ]
   }
 }

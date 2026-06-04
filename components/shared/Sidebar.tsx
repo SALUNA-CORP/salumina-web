@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils/cn';
+import { Logo } from './Logo';
 import {
   Home,
   CreditCard,
@@ -54,16 +55,17 @@ export function Sidebar({ role }: SidebarProps) {
   return (
     <aside className="w-64 bg-gray-900 min-h-screen">
       <div className="p-6">
-        <div className="flex items-center gap-2 mb-8">
-          {role === 'superadmin' ? (
-            <UserCog className="w-8 h-8 text-blue-500" />
-          ) : (
-            <UserIcon className="w-8 h-8 text-blue-500" />
-          )}
-          <div>
-            <p className="text-white font-semibold">
-              {role === 'superadmin' ? 'Admin' : 'Usuario'}
-            </p>
+        <div className="mb-8">
+          <Logo size="md" href={role === 'superadmin' ? '/admin' : '/dashboard'} className="[&_span]:!text-white [&_span:last-child]:!text-gray-400" />
+          <div className="mt-3 flex items-center gap-2 pl-2">
+            {role === 'superadmin' ? (
+              <UserCog className="w-4 h-4 text-blue-400" />
+            ) : (
+              <UserIcon className="w-4 h-4 text-blue-400" />
+            )}
+            <span className="text-sm text-gray-400">
+              {role === 'superadmin' ? 'Panel Admin' : 'Panel Usuario'}
+            </span>
           </div>
         </div>
 
