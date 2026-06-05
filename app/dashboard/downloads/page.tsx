@@ -10,7 +10,7 @@ export default function DownloadsPage() {
       name: 'POLYBET para Windows',
       file: 'POLYBET.Setup.0.2.0.exe',
       size: '105.78 MB',
-      url: 'https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/download/v0.2.0/POLYBET.Setup.0.2.0.exe',
+      url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/POLYBET.Setup.0.2.0.exe',
       requirements: 'Windows 10/11 (64-bit)',
       icon: Monitor,
       color: 'blue'
@@ -19,7 +19,7 @@ export default function DownloadsPage() {
       name: 'POLYBET para Android',
       file: 'polybet-v0.2.0.apk',
       size: '3.07 MB',
-      url: 'https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/download/v0.2.0/polybet-v0.2.0.apk',
+      url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/polybet-v0.2.0.apk',
       requirements: 'Android 7.0+ (API 24)',
       packageId: 'com.polybet.sports',
       icon: Smartphone,
@@ -49,7 +49,7 @@ export default function DownloadsPage() {
               </div>
             </div>
             <a
-              href="https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/tag/v0.2.0"
+              href="https://github.com/SALUNA-CORP/polybet-releases/releases/tag/v0.2.0"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-purple-600 hover:text-purple-700 font-medium"
@@ -283,9 +283,9 @@ export default function DownloadsPage() {
           <div className="flex items-start gap-2">
             <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
             <p>
-              <strong>Código abierto:</strong> Revisa el código en{' '}
+              <strong>Releases públicos:</strong> Revisa las versiones en{' '}
               <a
-                href="https://github.com/SALUNA-CORP/salumina-sports-desktop"
+                href="https://github.com/SALUNA-CORP/polybet-releases"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline"

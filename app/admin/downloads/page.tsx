@@ -30,23 +30,23 @@ export default async function AdminDownloadsPage() {
     version: '0.2.0',
     versionCode: 3,
     releaseDate: '2026-06-04',
-    repoUrl: 'https://github.com/SALUNA-CORP/salumina-sports-desktop',
-    releaseUrl: 'https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/tag/v0.2.0',
-    latestReleaseUrl: 'https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/latest',
+    repoUrl: 'https://github.com/SALUNA-CORP/polybet-releases',
+    releaseUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/tag/v0.2.0',
+    latestReleaseUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/latest',
 
     platforms: {
       windows: {
         name: 'POLYBET.Setup.0.2.0.exe',
         size: '105.78 MB',
-        url: 'https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/download/v0.2.0/POLYBET.Setup.0.2.0.exe',
-        checksumUrl: 'https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/download/v0.2.0/CHECKSUMS.txt',
+        url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/POLYBET.Setup.0.2.0.exe',
+        checksumUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/CHECKSUMS.txt',
       },
       android: {
         name: 'polybet-v0.2.0.apk',
         size: '3.07 MB',
         packageId: 'com.polybet.sports',
-        url: 'https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/download/v0.2.0/polybet-v0.2.0.apk',
-        checksumUrl: 'https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/download/v0.2.0/CHECKSUMS.txt',
+        url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/polybet-v0.2.0.apk',
+        checksumUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/CHECKSUMS.txt',
       },
     },
 
