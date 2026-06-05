@@ -199,8 +199,8 @@ export function PredictionHistory({
                     tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
                   />
                   <Tooltip
-                    formatter={(value: number) => formatCurrency(value)}
-                    labelFormatter={(label) => formatDate(label)}
+                    formatter={(value) => formatCurrency(Number(value) || 0)}
+                    labelFormatter={(label) => formatDate(String(label))}
                   />
                   <Line
                     type="monotone"
