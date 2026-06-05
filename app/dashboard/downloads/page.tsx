@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Download, Smartphone, Monitor, CheckCircle, AlertCircle } from 'lucide-react';
 
 export default function DownloadsPage() {
-  const version = '0.2.1';
+  const version = '0.2.2';
   const releaseDate = '5 de junio 2026';
   const appName = 'QUANTIXBET';
 
@@ -11,16 +11,16 @@ export default function DownloadsPage() {
       name: 'QUANTIXBET para Windows',
       file: 'QUANTIXBET.Setup.0.2.0.exe',
       size: '212.44 MB',
-      url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.1/QUANTIXBET.Setup.0.2.0.exe',
+      url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.2/QUANTIXBET.Setup.0.2.0.exe',
       requirements: 'Windows 10/11 (64-bit)',
       icon: Monitor,
       color: 'blue'
     },
     android: {
       name: 'QUANTIXBET para Android',
-      file: 'quantixbet-v0.2.1.apk',
+      file: 'quantixbet-v0.2.2.apk',
       size: '3.07 MB',
-      url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.1/quantixbet-v0.2.1.apk',
+      url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.2/quantixbet-v0.2.2.apk',
       requirements: 'Android 7.0+ (API 24)',
       packageId: 'com.quantixbet.sports',
       icon: Smartphone,
@@ -50,7 +50,7 @@ export default function DownloadsPage() {
               </div>
             </div>
             <a
-              href="https://github.com/SALUNA-CORP/polybet-releases/releases/tag/v0.2.1"
+              href="https://github.com/SALUNA-CORP/polybet-releases/releases/tag/v0.2.2"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-purple-600 hover:text-purple-700 font-medium"
@@ -237,7 +237,7 @@ export default function DownloadsPage() {
           </CardHeader>
           <CardContent>
             <ol className="space-y-3 list-decimal list-inside text-gray-700">
-              <li>Descarga el archivo <code className="px-2 py-1 bg-gray-100 rounded text-sm">quantixbet-v0.2.1.apk</code></li>
+              <li>Descarga el archivo <code className="px-2 py-1 bg-gray-100 rounded text-sm">quantixbet-v0.2.2.apk</code></li>
               <li>
                 Habilita la instalación de apps desconocidas:
                 <ul className="ml-6 mt-2 space-y-1 list-disc text-sm text-gray-600">

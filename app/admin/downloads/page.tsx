@@ -27,26 +27,26 @@ export default async function AdminDownloadsPage() {
   }
 
   const appInfo = {
-    version: '0.2.1',
-    versionCode: 4,
+    version: '0.2.2',
+    versionCode: 5,
     releaseDate: '2026-06-05',
     repoUrl: 'https://github.com/SALUNA-CORP/polybet-releases',
-    releaseUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/tag/v0.2.1',
+    releaseUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/tag/v0.2.2',
     latestReleaseUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/latest',
 
     platforms: {
       windows: {
         name: 'QUANTIXBET.Setup.0.2.0.exe',
         size: '212.44 MB',
-        url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.1/QUANTIXBET.Setup.0.2.0.exe',
-        checksumUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.1/CHECKSUMS.txt',
+        url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.2/QUANTIXBET.Setup.0.2.0.exe',
+        checksumUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.2/CHECKSUMS.txt',
       },
       android: {
-        name: 'quantixbet-v0.2.1.apk',
+        name: 'quantixbet-v0.2.2.apk',
         size: '3.07 MB',
         packageId: 'com.quantixbet.sports',
-        url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.1/quantixbet-v0.2.1.apk',
-        checksumUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.1/CHECKSUMS.txt',
+        url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.2/quantixbet-v0.2.2.apk',
+        checksumUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.2/CHECKSUMS.txt',
       },
     },
 
