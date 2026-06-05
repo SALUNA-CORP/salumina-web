@@ -178,12 +178,13 @@ export async function POST(request: NextRequest) {
       // Create wallet transaction
       const { data: wallet } = await supabaseAdmin
         .from('user_wallets')
-        .select('balance')
+        .select('balance, total_won')
         .eq('user_id', bet.user_id)
         .single();
 
       if (wallet) {
         const currentBalance = Number(wallet.balance);
+        const currentTotalWon = Number(wallet.total_won || 0);
         const newBalance = currentBalance + netPayout;
 
         // Credit user wallet
@@ -191,7 +192,7 @@ export async function POST(request: NextRequest) {
           .from('user_wallets')
           .update({
             balance: newBalance,
-            total_won: supabaseAdmin.sql`total_won + ${netPayout}`,
+            total_won: currentTotalWon + netPayout,
           })
           .eq('user_id', bet.user_id);
 

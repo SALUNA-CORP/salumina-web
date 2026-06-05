@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
     // Get user wallet
     const { data: wallet } = await supabaseAdmin
       .from('user_wallets')
-      .select('balance')
+      .select('balance, total_withdrawn')
       .eq('user_id', user.id)
       .single();
 
@@ -43,6 +43,7 @@ export async function POST(request: NextRequest) {
     }
 
     const currentBalance = Number(wallet.balance);
+    const currentTotalWithdrawn = Number(wallet.total_withdrawn || 0);
 
     // Check sufficient balance
     if (currentBalance < amount) {
@@ -94,7 +95,7 @@ export async function POST(request: NextRequest) {
       .from('user_wallets')
       .update({
         balance: newBalance,
-        total_withdrawn: supabaseAdmin.sql`total_withdrawn + ${amount}`,
+        total_withdrawn: currentTotalWithdrawn + amount,
       })
       .eq('user_id', user.id);
 

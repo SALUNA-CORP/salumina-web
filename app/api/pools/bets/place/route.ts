@@ -106,7 +106,7 @@ export async function POST(request: NextRequest) {
     // Get user wallet
     const { data: wallet } = await supabaseAdmin
       .from('user_wallets')
-      .select('balance')
+      .select('balance, total_wagered')
       .eq('user_id', user.id)
       .single();
 
@@ -118,6 +118,7 @@ export async function POST(request: NextRequest) {
     }
 
     const currentBalance = Number(wallet.balance);
+    const currentTotalWagered = Number(wallet.total_wagered || 0);
 
     // Check sufficient balance
     if (currentBalance < amount) {
@@ -158,7 +159,7 @@ export async function POST(request: NextRequest) {
       .from('user_wallets')
       .update({
         balance: newBalance,
-        total_wagered: supabaseAdmin.sql`total_wagered + ${amount}`,
+        total_wagered: currentTotalWagered + amount,
       })
       .eq('user_id', user.id);
 
@@ -193,7 +194,7 @@ export async function POST(request: NextRequest) {
         .from('user_wallets')
         .update({
           balance: currentBalance,
-          total_wagered: supabaseAdmin.sql`total_wagered - ${amount}`,
+          total_wagered: currentTotalWagered,
         })
         .eq('user_id', user.id);
 
