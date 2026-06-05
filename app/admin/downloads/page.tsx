@@ -36,25 +36,25 @@ export default async function AdminDownloadsPage() {
 
     platforms: {
       windows: {
-        name: 'POLYBET.Setup.0.2.0.exe',
-        size: '105.78 MB',
-        url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/POLYBET.Setup.0.2.0.exe',
+        name: 'QUANTIXBET.Setup.0.2.0.exe',
+        size: '212.44 MB',
+        url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/QUANTIXBET.Setup.0.2.0.exe',
         checksumUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/CHECKSUMS.txt',
       },
       android: {
-        name: 'polybet-v0.2.0.apk',
+        name: 'quantixbet-v0.2.0.apk',
         size: '3.07 MB',
-        packageId: 'com.polybet.sports',
-        url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/polybet-v0.2.0.apk',
+        packageId: 'com.quantixbet.sports',
+        url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/quantixbet-v0.2.0.apk',
         checksumUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/CHECKSUMS.txt',
       },
     },
 
     changelog: [
-      '✨ Rebrand completo a POLYBET',
+      '✨ Rebrand completo a QUANTIXBET',
       '🎨 Nuevo icono y diseño de interfaz',
-      '📦 Package ID actualizado: com.polybet.sports',
-      '🔗 Deep links actualizados: polybet://',
+      '📦 Package ID actualizado: com.quantixbet.sports',
+      '🔗 Deep links actualizados: quantixbet://',
       '⚡ Mejoras de rendimiento y estabilidad',
       '🔄 Sistema de auto-actualización mejorado',
     ],

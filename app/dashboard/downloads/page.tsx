@@ -9,20 +9,20 @@ export default function DownloadsPage() {
   const downloads = {
     windows: {
       name: 'QUANTIXBET para Windows',
-      file: 'POLYBET.Setup.0.2.0.exe',
-      size: '105.78 MB',
-      url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/POLYBET.Setup.0.2.0.exe',
+      file: 'QUANTIXBET.Setup.0.2.0.exe',
+      size: '212.44 MB',
+      url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/QUANTIXBET.Setup.0.2.0.exe',
       requirements: 'Windows 10/11 (64-bit)',
       icon: Monitor,
       color: 'blue'
     },
     android: {
       name: 'QUANTIXBET para Android',
-      file: 'polybet-v0.2.0.apk',
+      file: 'quantixbet-v0.2.0.apk',
       size: '3.07 MB',
-      url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/polybet-v0.2.0.apk',
+      url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/quantixbet-v0.2.0.apk',
       requirements: 'Android 7.0+ (API 24)',
-      packageId: 'com.polybet.sports',
+      packageId: 'com.quantixbet.sports',
       icon: Smartphone,
       color: 'green'
     }
@@ -198,7 +198,7 @@ export default function DownloadsPage() {
           <div className="text-sm text-yellow-800">
             <p className="font-medium mb-1">Requisito: Suscripción Activa</p>
             <p>
-              Necesitas una suscripción activa para usar POLYBET. Las casas de apuestas
+              Necesitas una suscripción activa para usar QUANTIXBET. Las casas de apuestas
               disponibles dependerán de tu plan (Inicial, Estándar o Premium).
             </p>
           </div>
@@ -217,11 +217,11 @@ export default function DownloadsPage() {
           </CardHeader>
           <CardContent>
             <ol className="space-y-3 list-decimal list-inside text-gray-700">
-              <li>Descarga el archivo <code className="px-2 py-1 bg-gray-100 rounded text-sm">POLYBET.Setup.0.2.0.exe</code></li>
+              <li>Descarga el archivo <code className="px-2 py-1 bg-gray-100 rounded text-sm">QUANTIXBET.Setup.0.2.0.exe</code></li>
               <li>Ejecuta el instalador descargado</li>
               <li>Sigue el asistente de instalación</li>
-              <li>POLYBET se instalará y abrirá automáticamente</li>
-              <li>Inicia sesión con tu email y contraseña de PolyBet</li>
+              <li>QUANTIXBET se instalará y abrirá automáticamente</li>
+              <li>Inicia sesión con tu email y contraseña de QuantixBet</li>
               <li>¡Listo! Empieza a encontrar arbitrajes</li>
             </ol>
           </CardContent>
@@ -237,7 +237,7 @@ export default function DownloadsPage() {
           </CardHeader>
           <CardContent>
             <ol className="space-y-3 list-decimal list-inside text-gray-700">
-              <li>Descarga el archivo <code className="px-2 py-1 bg-gray-100 rounded text-sm">polybet-v0.2.0.apk</code></li>
+              <li>Descarga el archivo <code className="px-2 py-1 bg-gray-100 rounded text-sm">quantixbet-v0.2.0.apk</code></li>
               <li>
                 Habilita la instalación de apps desconocidas:
                 <ul className="ml-6 mt-2 space-y-1 list-disc text-sm text-gray-600">
@@ -247,7 +247,7 @@ export default function DownloadsPage() {
               </li>
               <li>Abre el archivo APK descargado</li>
               <li>Acepta los permisos y sigue las instrucciones</li>
-              <li>Inicia sesión con tus credenciales de PolyBet</li>
+              <li>Inicia sesión con tus credenciales de QuantixBet</li>
               <li>¡Listo! La app está instalada</li>
             </ol>
           </CardContent>
