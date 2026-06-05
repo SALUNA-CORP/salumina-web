@@ -4,7 +4,7 @@ export function LandingFeatures() {
   const features = [
     {
       icon: Target,
-      title: 'PolyBet Pools',
+      title: 'Market Pools',
       description: 'Apuesta en eventos deportivos, políticos y predicciones con sistema parimutuel.',
     },
     {

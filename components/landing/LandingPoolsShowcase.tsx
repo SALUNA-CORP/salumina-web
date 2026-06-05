@@ -7,10 +7,10 @@ export function LandingPoolsShowcase() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl sm:text-6xl font-bold text-white mb-4">
-            PolyBet Pools
+            Market Pools
           </h2>
           <p className="text-xl sm:text-2xl text-blue-200 max-w-3xl mx-auto">
-            Sistema de apuestas parimutuel en eventos deportivos, políticos y predicciones del mundo real
+            Sistema de mercados parimutuel en eventos deportivos, políticos y predicciones del mundo real
           </p>
         </div>
 

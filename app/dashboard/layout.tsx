@@ -33,11 +33,13 @@ export default async function DashboardLayout({
   }
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
-      <Sidebar role="user" />
-      <div className="flex-1 flex flex-col">
+    <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
+      <div className="md:sticky md:top-0 md:h-screen md:overflow-y-auto">
+        <Sidebar role="user" />
+      </div>
+      <div className="flex-1 flex flex-col min-w-0">
         <Header user={{ email: profile.email, role: profile.role }} />
-        <main className="flex-1 p-6">{children}</main>
+        <main className="flex-1 p-3 sm:p-4 md:p-6 overflow-x-hidden">{children}</main>
       </div>
     </div>
   );

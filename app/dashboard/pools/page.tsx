@@ -62,50 +62,50 @@ export default async function PoolsDashboardPage() {
   }) || [];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 p-4 sm:p-6">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">PolyBet Pools</h1>
-        <p className="text-gray-500 mt-1">Apuesta en eventos deportivos, políticos y más</p>
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Market Pools</h1>
+        <p className="text-sm sm:text-base text-gray-500 mt-1">Participa en mercados de predicción</p>
       </div>
 
       {/* Wallet Overview */}
       <WalletOverview wallet={wallet} />
 
       {/* Quick Actions */}
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
         <Link
           href="/dashboard/pools/wallet"
-          className="bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-lg p-6 hover:shadow-lg transition-shadow"
+          className="bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-lg p-4 sm:p-6 hover:shadow-lg transition-shadow"
         >
-          <h3 className="font-semibold text-lg mb-1">💳 Mi Wallet</h3>
-          <p className="text-blue-100 text-sm">Depositar, retirar y ver transacciones</p>
+          <h3 className="font-semibold text-base sm:text-lg mb-1">💳 Mi Wallet</h3>
+          <p className="text-blue-100 text-xs sm:text-sm">Depositar, retirar y ver transacciones</p>
         </Link>
 
         <Link
           href="/dashboard/pools/history"
-          className="bg-gradient-to-br from-purple-600 to-purple-700 text-white rounded-lg p-6 hover:shadow-lg transition-shadow"
+          className="bg-gradient-to-br from-purple-600 to-purple-700 text-white rounded-lg p-4 sm:p-6 hover:shadow-lg transition-shadow"
         >
-          <h3 className="font-semibold text-lg mb-1">📊 Mis Apuestas</h3>
-          <p className="text-purple-100 text-sm">Historial y apuestas activas</p>
+          <h3 className="font-semibold text-base sm:text-lg mb-1">📊 Mis Participaciones</h3>
+          <p className="text-purple-100 text-xs sm:text-sm">Historial y mercados activos</p>
         </Link>
 
         <Link
           href="/dashboard/pools/markets"
-          className="bg-gradient-to-br from-green-600 to-green-700 text-white rounded-lg p-6 hover:shadow-lg transition-shadow"
+          className="bg-gradient-to-br from-green-600 to-green-700 text-white rounded-lg p-4 sm:p-6 hover:shadow-lg transition-shadow sm:col-span-2 md:col-span-1"
         >
-          <h3 className="font-semibold text-lg mb-1">🎯 Todos los Mercados</h3>
-          <p className="text-green-100 text-sm">Explora todas las opciones</p>
+          <h3 className="font-semibold text-base sm:text-lg mb-1">🎯 Todos los Mercados</h3>
+          <p className="text-green-100 text-xs sm:text-sm">Explora todas las opciones</p>
         </Link>
       </div>
 
       {/* Markets List */}
       <div>
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-2xl font-bold text-gray-900">Mercados Disponibles</h2>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Mercados Disponibles</h2>
           <Link
             href="/dashboard/pools/markets"
-            className="text-blue-600 hover:text-blue-700 font-medium"
+            className="text-blue-600 hover:text-blue-700 font-medium text-sm sm:text-base"
           >
             Ver todos →
           </Link>

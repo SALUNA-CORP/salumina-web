@@ -1,6 +1,6 @@
-# PolyBet - Sistema de Arbitraje Deportivo con Red MLM
+# QuantixBet - Market Intelligence & Trading Platform
 
-Plataforma completa de arbitraje deportivo con sistema MLM binario de 20 niveles. Activa tu cuenta y selecciona tus casas de apuestas.
+Plataforma completa de análisis de mercados, pools de predicción y sistema de trading inteligente con red binaria de 20 niveles.
 
 ## 🚀 Características Implementadas
 

@@ -3,8 +3,8 @@ import './globals.css';
 import { ToastProvider } from '@/components/ui/toast';
 
 export const metadata: Metadata = {
-  title: 'PolyBet - Arbitraje Deportivo y Red MLM',
-  description: 'Plataforma de arbitraje deportivo con sistema MLM binario. Activa tu cuenta y selecciona tus casas de apuestas.',
+  title: 'QuantixBet - Market Intelligence & Trading Platform',
+  description: 'Plataforma de análisis de mercados con sistema de trading inteligente. Mercados de predicción, arbitrajes y oportunidades de valor.',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   viewport: {
     width: 'device-width',
     initialScale: 1,
-    maximumScale: 1,
+    maximumScale: 5,
   },
 };
 

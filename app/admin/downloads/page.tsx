@@ -61,26 +61,27 @@ export default async function AdminDownloadsPage() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 max-w-7xl mx-auto">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Gestión de Descargas</h1>
-          <p className="text-gray-500 mt-1">Administra las versiones de POLYBET</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Gestión de Descargas</h1>
+          <p className="text-sm sm:text-base text-gray-500 mt-1">Administra las versiones de QUANTIXBET</p>
         </div>
         <a
           href={appInfo.releaseUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+          className="flex items-center justify-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors text-sm sm:text-base"
         >
           <ExternalLink className="w-4 h-4" />
-          Ver en GitHub
+          <span className="hidden sm:inline">Ver en GitHub</span>
+          <span className="sm:hidden">GitHub</span>
         </a>
       </div>
 
       {/* Version Overview */}
-      <div className="grid md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium text-gray-600">Versión Actual</CardTitle>

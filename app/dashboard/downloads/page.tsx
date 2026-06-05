@@ -4,10 +4,11 @@ import { Download, Smartphone, Monitor, CheckCircle, AlertCircle } from 'lucide-
 export default function DownloadsPage() {
   const version = '0.2.0';
   const releaseDate = '4 de junio 2026';
+  const appName = 'QUANTIXBET';
 
   const downloads = {
     windows: {
-      name: 'POLYBET para Windows',
+      name: 'QUANTIXBET para Windows',
       file: 'POLYBET.Setup.0.2.0.exe',
       size: '105.78 MB',
       url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/POLYBET.Setup.0.2.0.exe',
@@ -16,7 +17,7 @@ export default function DownloadsPage() {
       color: 'blue'
     },
     android: {
-      name: 'POLYBET para Android',
+      name: 'QUANTIXBET para Android',
       file: 'polybet-v0.2.0.apk',
       size: '3.07 MB',
       url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/polybet-v0.2.0.apk',
@@ -28,11 +29,11 @@ export default function DownloadsPage() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 max-w-6xl mx-auto">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">Descargas</h1>
-        <p className="text-gray-500 mt-1">Descarga POLYBET para tu dispositivo</p>
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Descargas</h1>
+        <p className="text-sm sm:text-base text-gray-500 mt-1">Descarga {appName} para tu dispositivo</p>
       </div>
 
       {/* Version Info Banner */}
@@ -61,7 +62,7 @@ export default function DownloadsPage() {
       </Card>
 
       {/* Features Grid */}
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
         <div className="flex items-start gap-3 p-4 bg-white border border-gray-200 rounded-lg">
           <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
           <div>
@@ -86,7 +87,7 @@ export default function DownloadsPage() {
       </div>
 
       {/* Download Cards */}
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {/* Windows Card */}
         <Card className="border-2 border-blue-200 hover:border-blue-400 transition-colors">
           <CardHeader className="bg-gradient-to-br from-blue-50 to-blue-100">
@@ -205,7 +206,7 @@ export default function DownloadsPage() {
       </Card>
 
       {/* Installation Instructions */}
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {/* Windows Instructions */}
         <Card>
           <CardHeader>

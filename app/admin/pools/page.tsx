@@ -59,9 +59,9 @@ export default async function AdminPoolsPage() {
       color: 'text-blue-600',
     },
     {
-      title: 'Apuestas Totales',
+      title: 'Participaciones',
       value: totalBets,
-      description: `$${totalWagered.toFixed(2)} apostado`,
+      description: `$${totalWagered.toFixed(2)} en pools`,
       icon: TrendingUp,
       color: 'text-green-600',
     },
@@ -82,23 +82,23 @@ export default async function AdminPoolsPage() {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 p-4 sm:p-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">PolyBet Pools</h1>
-          <p className="text-gray-500 mt-1">Gestión de mercados de apuestas</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Market Pools</h1>
+          <p className="text-sm sm:text-base text-gray-500 mt-1">Gestión de mercados de predicción</p>
         </div>
         <Link
           href="/admin/pools/markets/create"
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 rounded-lg font-medium transition-colors text-center text-sm sm:text-base"
         >
           Crear Mercado
         </Link>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         {stats.map((stat, index) => (
           <Card key={index}>
             <CardHeader className="flex flex-row items-center justify-between pb-2">
@@ -116,7 +116,7 @@ export default async function AdminPoolsPage() {
       </div>
 
       {/* Quick Actions */}
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
         <Link
           href="/admin/pools/markets"
           className="bg-white border-2 border-gray-200 hover:border-blue-500 rounded-lg p-6 transition-all group"
