@@ -20,6 +20,7 @@ import {
   Activity,
   Calculator,
   Star,
+  Trophy,
 } from 'lucide-react';
 
 interface NavItem {
@@ -36,6 +37,7 @@ const userNavItems: NavItem[] = [
   { href: '/dashboard', label: 'Dashboard', icon: Home },
   { href: '/dashboard/pools', label: 'Market Pools', icon: TrendingUp },
   { href: '/dashboard/pools/favorites', label: 'Favoritos', icon: Star },
+  { href: '/dashboard/achievements', label: 'Logros', icon: Trophy },
   { href: '/dashboard/subscription', label: 'Suscripción', icon: CreditCard },
   { href: '/dashboard/network', label: 'Red Binaria', icon: Network },
   { href: '/dashboard/network/performance', label: 'Performance MLM', icon: Activity },
