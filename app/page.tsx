@@ -1,5 +1,6 @@
 import { supabaseAdmin } from '@/lib/supabase/admin';
 import { LandingHero } from '@/components/landing/LandingHero';
+import { LandingPoolsShowcase } from '@/components/landing/LandingPoolsShowcase';
 import { LandingFeatures } from '@/components/landing/LandingFeatures';
 import { LandingPricing } from '@/components/landing/LandingPricing';
 import { LandingFooter } from '@/components/landing/LandingFooter';
@@ -25,6 +26,7 @@ export default async function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
       <LandingHero />
+      <LandingPoolsShowcase />
       <LandingFeatures />
       <LandingPricing
         basePrice={basePrice}

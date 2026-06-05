@@ -1,11 +1,21 @@
-import { Zap, TrendingUp, Shield, Users, Calculator, RefreshCw } from 'lucide-react';
+import { Zap, TrendingUp, Shield, Users, Calculator, RefreshCw, Target, DollarSign } from 'lucide-react';
 
 export function LandingFeatures() {
   const features = [
     {
+      icon: Target,
+      title: 'PolyBet Pools',
+      description: 'Apuesta en eventos deportivos, políticos y predicciones con sistema parimutuel.',
+    },
+    {
       icon: Zap,
       title: 'Escaneo en Tiempo Real',
       description: 'Detección automática de arbitrajes cada 2 minutos en múltiples bookmakers.',
+    },
+    {
+      icon: DollarSign,
+      title: 'Wallet Integrado',
+      description: 'Deposita, retira y gestiona tus fondos de forma segura con múltiples métodos de pago.',
     },
     {
       icon: TrendingUp,
@@ -14,23 +24,13 @@ export function LandingFeatures() {
     },
     {
       icon: Calculator,
-      title: 'Calculadora Integrada',
+      title: 'Calculadora de Arbitraje',
       description: 'Calcula stakes óptimos automáticamente para maximizar ganancias.',
-    },
-    {
-      icon: Users,
-      title: 'Referidos Ilimitados',
-      description: 'Invita usuarios y gana comisiones por sus suscripciones mensuales.',
     },
     {
       icon: Shield,
       title: 'Seguro y Confiable',
       description: 'Datos cifrados, pagos con Stripe, base de datos segura con Supabase.',
-    },
-    {
-      icon: RefreshCw,
-      title: 'Actualizaciones Automáticas',
-      description: 'Desktop y móvil siempre actualizados con las últimas mejoras.',
     },
   ];
 

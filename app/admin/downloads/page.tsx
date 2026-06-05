@@ -36,9 +36,9 @@ export default async function AdminDownloadsPage() {
 
     platforms: {
       windows: {
-        name: 'POLYBET Setup 0.2.0.exe',
+        name: 'POLYBET.Setup.0.2.0.exe',
         size: '105.78 MB',
-        url: 'https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/download/v0.2.0/POLYBET%20Setup%200.2.0.exe',
+        url: 'https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/download/v0.2.0/POLYBET.Setup.0.2.0.exe',
         checksumUrl: 'https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/download/v0.2.0/CHECKSUMS.txt',
       },
       android: {

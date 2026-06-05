@@ -8,9 +8,9 @@ export default function DownloadsPage() {
   const downloads = {
     windows: {
       name: 'POLYBET para Windows',
-      file: 'POLYBET Setup 0.2.0.exe',
+      file: 'POLYBET.Setup.0.2.0.exe',
       size: '105.78 MB',
-      url: 'https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/download/v0.2.0/POLYBET%20Setup%200.2.0.exe',
+      url: 'https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/download/v0.2.0/POLYBET.Setup.0.2.0.exe',
       requirements: 'Windows 10/11 (64-bit)',
       icon: Monitor,
       color: 'blue'
@@ -216,7 +216,7 @@ export default function DownloadsPage() {
           </CardHeader>
           <CardContent>
             <ol className="space-y-3 list-decimal list-inside text-gray-700">
-              <li>Descarga el archivo <code className="px-2 py-1 bg-gray-100 rounded text-sm">POLYBET Setup 0.2.0.exe</code></li>
+              <li>Descarga el archivo <code className="px-2 py-1 bg-gray-100 rounded text-sm">POLYBET.Setup.0.2.0.exe</code></li>
               <li>Ejecuta el instalador descargado</li>
               <li>Sigue el asistente de instalación</li>
               <li>POLYBET se instalará y abrirá automáticamente</li>

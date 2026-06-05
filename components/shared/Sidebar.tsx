@@ -16,6 +16,7 @@ import {
   BarChart3,
   Settings,
   UserCog,
+  TrendingUp,
 } from 'lucide-react';
 
 interface NavItem {
@@ -30,6 +31,7 @@ interface SidebarProps {
 
 const userNavItems: NavItem[] = [
   { href: '/dashboard', label: 'Dashboard', icon: Home },
+  { href: '/dashboard/pools', label: 'PolyBet Pools', icon: TrendingUp },
   { href: '/dashboard/subscription', label: 'Suscripción', icon: CreditCard },
   { href: '/dashboard/network', label: 'Red Binaria', icon: Network },
   { href: '/dashboard/commissions', label: 'Comisiones', icon: DollarSign },
@@ -41,6 +43,7 @@ const userNavItems: NavItem[] = [
 
 const adminNavItems: NavItem[] = [
   { href: '/admin', label: 'Dashboard', icon: Home },
+  { href: '/admin/pools', label: 'PolyBet Pools', icon: TrendingUp },
   { href: '/admin/users', label: 'Usuarios', icon: Users },
   { href: '/admin/config', label: 'Configuración', icon: Settings },
   { href: '/admin/withdrawals', label: 'Retiros', icon: Wallet },
