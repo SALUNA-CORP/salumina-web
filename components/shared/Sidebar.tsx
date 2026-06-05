@@ -46,6 +46,7 @@ const adminNavItems: NavItem[] = [
   { href: '/admin/withdrawals', label: 'Retiros', icon: Wallet },
   { href: '/admin/network', label: 'Red Global', icon: Network },
   { href: '/admin/analytics', label: 'Analíticas', icon: BarChart3 },
+  { href: '/admin/downloads', label: 'Descargas', icon: Download },
 ];
 
 export function Sidebar({ role }: SidebarProps) {

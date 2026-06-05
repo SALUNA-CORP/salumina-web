@@ -1,105 +1,299 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Download, Smartphone, CheckCircle } from 'lucide-react';
+import { Download, Smartphone, Monitor, CheckCircle, AlertCircle } from 'lucide-react';
 
 export default function DownloadsPage() {
+  const version = '0.2.0';
+  const releaseDate = '4 de junio 2026';
+
+  const downloads = {
+    windows: {
+      name: 'POLYBET para Windows',
+      file: 'POLYBET Setup 0.2.0.exe',
+      size: '105.78 MB',
+      url: 'https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/download/v0.2.0/POLYBET%20Setup%200.2.0.exe',
+      requirements: 'Windows 10/11 (64-bit)',
+      icon: Monitor,
+      color: 'blue'
+    },
+    android: {
+      name: 'POLYBET para Android',
+      file: 'polybet-v0.2.0.apk',
+      size: '3.07 MB',
+      url: 'https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/download/v0.2.0/polybet-v0.2.0.apk',
+      requirements: 'Android 7.0+ (API 24)',
+      packageId: 'com.polybet.sports',
+      icon: Smartphone,
+      color: 'green'
+    }
+  };
+
   return (
     <div className="space-y-6">
+      {/* Header */}
       <div>
         <h1 className="text-3xl font-bold text-gray-900">Descargas</h1>
-        <p className="text-gray-500 mt-1">Descarga la app móvil de arbitraje</p>
+        <p className="text-gray-500 mt-1">Descarga POLYBET para tu dispositivo</p>
       </div>
 
-      <Card className="border-blue-200 bg-gradient-to-br from-blue-50 to-purple-50">
-        <CardHeader>
-          <div className="flex items-center gap-3">
-            <Smartphone className="w-8 h-8 text-blue-600" />
-            <div>
-              <CardTitle className="text-blue-900">Salumina Sports - App Android</CardTitle>
-              <p className="text-sm text-blue-700 mt-1">
-                Scanner de arbitrajes deportivos en tiempo real
+      {/* Version Info Banner */}
+      <Card className="border-purple-200 bg-gradient-to-r from-purple-50 to-blue-50">
+        <CardContent className="p-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center">
+                <Download className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <p className="font-semibold text-gray-900">Versión {version}</p>
+                <p className="text-sm text-gray-600">Última actualización: {releaseDate}</p>
+              </div>
+            </div>
+            <a
+              href="https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/tag/v0.2.0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-purple-600 hover:text-purple-700 font-medium"
+            >
+              Ver notas de la versión →
+            </a>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Features Grid */}
+      <div className="grid md:grid-cols-3 gap-4">
+        <div className="flex items-start gap-3 p-4 bg-white border border-gray-200 rounded-lg">
+          <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+          <div>
+            <p className="font-medium text-gray-900">Scanner en Tiempo Real</p>
+            <p className="text-sm text-gray-500">Detecta arbitrajes automáticamente cada 2 minutos</p>
+          </div>
+        </div>
+        <div className="flex items-start gap-3 p-4 bg-white border border-gray-200 rounded-lg">
+          <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+          <div>
+            <p className="font-medium text-gray-900">Múltiples Bookmakers</p>
+            <p className="text-sm text-gray-500">Acceso según tu plan de suscripción</p>
+          </div>
+        </div>
+        <div className="flex items-start gap-3 p-4 bg-white border border-gray-200 rounded-lg">
+          <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+          <div>
+            <p className="font-medium text-gray-900">Auto-actualización</p>
+            <p className="text-sm text-gray-500">Siempre tendrás la última versión</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Download Cards */}
+      <div className="grid md:grid-cols-2 gap-6">
+        {/* Windows Card */}
+        <Card className="border-2 border-blue-200 hover:border-blue-400 transition-colors">
+          <CardHeader className="bg-gradient-to-br from-blue-50 to-blue-100">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                <Monitor className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <CardTitle className="text-blue-900">{downloads.windows.name}</CardTitle>
+                <p className="text-sm text-blue-700 mt-1">Desktop para Windows</p>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent className="p-6 space-y-4">
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-gray-600">Archivo:</span>
+                <span className="font-medium text-gray-900">{downloads.windows.file}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-600">Tamaño:</span>
+                <span className="font-medium text-gray-900">{downloads.windows.size}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-600">Requisitos:</span>
+                <span className="font-medium text-gray-900">{downloads.windows.requirements}</span>
+              </div>
+            </div>
+
+            <a
+              href={downloads.windows.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              <Download className="w-5 h-5" />
+              Descargar para Windows
+            </a>
+
+            <div className="pt-3 border-t border-gray-200">
+              <p className="text-xs text-gray-500">
+                ✓ Instalación con un clic
+                <br />
+                ✓ Auto-actualización integrada
               </p>
             </div>
-          </div>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="flex items-start gap-3 p-3 bg-white rounded-lg">
-              <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-              <div>
-                <p className="font-medium text-gray-900">Detección automática</p>
-                <p className="text-sm text-gray-500">Encuentra oportunidades sin esfuerzo</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3 p-3 bg-white rounded-lg">
-              <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-              <div>
-                <p className="font-medium text-gray-900">Múltiples bookmakers</p>
-                <p className="text-sm text-gray-500">Pinnacle, Betplay, Polymarket y más</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3 p-3 bg-white rounded-lg">
-              <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-              <div>
-                <p className="font-medium text-gray-900">Actualizaciones automáticas</p>
-                <p className="text-sm text-gray-500">Siempre la última versión</p>
-              </div>
-            </div>
-          </div>
+          </CardContent>
+        </Card>
 
-          <div className="p-6 bg-white rounded-lg border-2 border-blue-200">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="font-semibold text-gray-900">Versión actual: 0.2.2</p>
-                <p className="text-sm text-gray-500 mt-1">Última actualización: 4 de junio 2026</p>
+        {/* Android Card */}
+        <Card className="border-2 border-green-200 hover:border-green-400 transition-colors">
+          <CardHeader className="bg-gradient-to-br from-green-50 to-green-100">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+                <Smartphone className="w-6 h-6 text-white" />
               </div>
-              <a
-                href="https://github.com/SALUNA-CORP/salumina-sports-desktop/releases/latest/download/app-release.apk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                <Download className="w-5 h-5" />
-                Descargar APK
-              </a>
+              <div>
+                <CardTitle className="text-green-900">{downloads.android.name}</CardTitle>
+                <p className="text-sm text-green-700 mt-1">Móvil para Android</p>
+              </div>
             </div>
-          </div>
+          </CardHeader>
+          <CardContent className="p-6 space-y-4">
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-gray-600">Archivo:</span>
+                <span className="font-medium text-gray-900">{downloads.android.file}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-600">Tamaño:</span>
+                <span className="font-medium text-gray-900">{downloads.android.size}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-600">Requisitos:</span>
+                <span className="font-medium text-gray-900">{downloads.android.requirements}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-600">Package ID:</span>
+                <span className="font-mono text-xs text-gray-900">{downloads.android.packageId}</span>
+              </div>
+            </div>
 
-          <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-            <p className="text-sm text-yellow-800">
-              <strong>Nota:</strong> Necesitas una suscripción activa para usar la app. Las casas de
-              apuestas visibles dependerán de tu plan actual.
+            <a
+              href={downloads.android.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
+            >
+              <Download className="w-5 h-5" />
+              Descargar APK
+            </a>
+
+            <div className="pt-3 border-t border-gray-200">
+              <p className="text-xs text-gray-500">
+                ✓ APK firmado digitalmente
+                <br />
+                ✓ Instalación directa
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Important Note */}
+      <Card className="border-yellow-200 bg-yellow-50">
+        <CardContent className="p-4 flex gap-3">
+          <AlertCircle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
+          <div className="text-sm text-yellow-800">
+            <p className="font-medium mb-1">Requisito: Suscripción Activa</p>
+            <p>
+              Necesitas una suscripción activa para usar POLYBET. Las casas de apuestas
+              disponibles dependerán de tu plan (Inicial, Estándar o Premium).
             </p>
           </div>
         </CardContent>
       </Card>
 
       {/* Installation Instructions */}
+      <div className="grid md:grid-cols-2 gap-6">
+        {/* Windows Instructions */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Monitor className="w-5 h-5 text-blue-600" />
+              Instalación en Windows
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ol className="space-y-3 list-decimal list-inside text-gray-700">
+              <li>Descarga el archivo <code className="px-2 py-1 bg-gray-100 rounded text-sm">POLYBET Setup 0.2.0.exe</code></li>
+              <li>Ejecuta el instalador descargado</li>
+              <li>Sigue el asistente de instalación</li>
+              <li>POLYBET se instalará y abrirá automáticamente</li>
+              <li>Inicia sesión con tu email y contraseña de PolyBet</li>
+              <li>¡Listo! Empieza a encontrar arbitrajes</li>
+            </ol>
+          </CardContent>
+        </Card>
+
+        {/* Android Instructions */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Smartphone className="w-5 h-5 text-green-600" />
+              Instalación en Android
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ol className="space-y-3 list-decimal list-inside text-gray-700">
+              <li>Descarga el archivo <code className="px-2 py-1 bg-gray-100 rounded text-sm">polybet-v0.2.0.apk</code></li>
+              <li>
+                Habilita la instalación de apps desconocidas:
+                <ul className="ml-6 mt-2 space-y-1 list-disc text-sm text-gray-600">
+                  <li>Ve a Configuración → Seguridad</li>
+                  <li>Activa "Fuentes desconocidas" o "Instalar apps desconocidas"</li>
+                </ul>
+              </li>
+              <li>Abre el archivo APK descargado</li>
+              <li>Acepta los permisos y sigue las instrucciones</li>
+              <li>Inicia sesión con tus credenciales de PolyBet</li>
+              <li>¡Listo! La app está instalada</li>
+            </ol>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Additional Info */}
       <Card>
         <CardHeader>
-          <CardTitle>Instrucciones de Instalación</CardTitle>
+          <CardTitle>Información Adicional</CardTitle>
         </CardHeader>
-        <CardContent>
-          <ol className="space-y-3 list-decimal list-inside">
-            <li className="text-gray-700">
-              Descarga el archivo <code className="px-2 py-1 bg-gray-100 rounded">app-release.apk</code>
-            </li>
-            <li className="text-gray-700">
-              Habilita la instalación de apps desconocidas en tu dispositivo Android:
-              <ul className="ml-6 mt-2 space-y-1 list-disc">
-                <li className="text-sm text-gray-600">Ve a Configuración → Seguridad</li>
-                <li className="text-sm text-gray-600">Activa "Fuentes desconocidas" o "Instalar apps desconocidas"</li>
-              </ul>
-            </li>
-            <li className="text-gray-700">
-              Abre el archivo APK descargado y sigue las instrucciones
-            </li>
-            <li className="text-gray-700">
-              Inicia sesión con tu email y contraseña de Salumina
-            </li>
-            <li className="text-gray-700">
-              ¡Listo! Ya puedes usar la app para encontrar arbitrajes
-            </li>
-          </ol>
+        <CardContent className="space-y-3 text-sm text-gray-700">
+          <div className="flex items-start gap-2">
+            <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+            <p>
+              <strong>Seguridad:</strong> Todos los archivos están firmados digitalmente y son seguros.
+            </p>
+          </div>
+          <div className="flex items-start gap-2">
+            <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+            <p>
+              <strong>Actualizaciones:</strong> La app se actualiza automáticamente cuando hay nuevas versiones.
+            </p>
+          </div>
+          <div className="flex items-start gap-2">
+            <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+            <p>
+              <strong>Soporte:</strong> ¿Problemas con la instalación? Contacta a{' '}
+              <a href="mailto:salunacorpsas@gmail.com" className="text-blue-600 hover:underline">
+                salunacorpsas@gmail.com
+              </a>
+            </p>
+          </div>
+          <div className="flex items-start gap-2">
+            <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+            <p>
+              <strong>Código abierto:</strong> Revisa el código en{' '}
+              <a
+                href="https://github.com/SALUNA-CORP/salumina-sports-desktop"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                GitHub
+              </a>
+            </p>
+          </div>
         </CardContent>
       </Card>
     </div>
