@@ -21,6 +21,9 @@ import {
   Calculator,
   Star,
   Trophy,
+  History,
+  Bell,
+  GraduationCap,
 } from 'lucide-react';
 
 interface NavItem {
@@ -35,13 +38,17 @@ interface SidebarProps {
 
 const userNavItems: NavItem[] = [
   { href: '/dashboard', label: 'Dashboard', icon: Home },
+  { href: '/dashboard/notifications', label: 'Notificaciones', icon: Bell },
   { href: '/dashboard/pools', label: 'Market Pools', icon: TrendingUp },
   { href: '/dashboard/pools/favorites', label: 'Favoritos', icon: Star },
+  { href: '/dashboard/pools/history', label: 'Historial', icon: History },
+  { href: '/dashboard/pools/alerts', label: 'Alertas', icon: Bell },
   { href: '/dashboard/achievements', label: 'Logros', icon: Trophy },
   { href: '/dashboard/subscription', label: 'Suscripción', icon: CreditCard },
   { href: '/dashboard/network', label: 'Red Binaria', icon: Network },
   { href: '/dashboard/network/performance', label: 'Performance MLM', icon: Activity },
   { href: '/dashboard/network/calculator', label: 'Calculadora MLM', icon: Calculator },
+  { href: '/dashboard/training', label: 'Training Center', icon: GraduationCap },
   { href: '/dashboard/commissions', label: 'Comisiones', icon: DollarSign },
   { href: '/dashboard/withdrawals', label: 'Retiros', icon: Wallet },
   { href: '/dashboard/referrals', label: 'Referidos', icon: Users },
