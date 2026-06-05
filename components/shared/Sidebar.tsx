@@ -17,6 +17,8 @@ import {
   Settings,
   UserCog,
   TrendingUp,
+  Activity,
+  Calculator,
 } from 'lucide-react';
 
 interface NavItem {
@@ -34,6 +36,8 @@ const userNavItems: NavItem[] = [
   { href: '/dashboard/pools', label: 'Market Pools', icon: TrendingUp },
   { href: '/dashboard/subscription', label: 'Suscripción', icon: CreditCard },
   { href: '/dashboard/network', label: 'Red Binaria', icon: Network },
+  { href: '/dashboard/network/performance', label: 'Performance MLM', icon: Activity },
+  { href: '/dashboard/network/calculator', label: 'Calculadora MLM', icon: Calculator },
   { href: '/dashboard/commissions', label: 'Comisiones', icon: DollarSign },
   { href: '/dashboard/withdrawals', label: 'Retiros', icon: Wallet },
   { href: '/dashboard/referrals', label: 'Referidos', icon: Users },
