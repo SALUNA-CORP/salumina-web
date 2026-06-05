@@ -147,14 +147,24 @@ export default function PoolsHistoryPage() {
       </div>
 
       {/* History Component */}
-      {data && (
-        <PredictionHistory
-          bets={data.bets}
-          stats={data.stats}
-          categoriesStats={data.categoriesStats}
-          timeSeriesData={data.timeSeriesData}
-        />
-      )}
+      <PredictionHistory
+        bets={data?.bets || []}
+        stats={data?.stats || {
+          total: 0,
+          won: 0,
+          lost: 0,
+          pending: 0,
+          winRate: 0,
+          roi: 0,
+          totalInvested: 0,
+          totalReturns: 0,
+          netProfit: 0,
+          bestCategory: 'N/A',
+          currentStreak: { count: 0, type: null },
+        }}
+        categoriesStats={data?.categoriesStats || []}
+        timeSeriesData={data?.timeSeriesData || []}
+      />
     </div>
   );
 }

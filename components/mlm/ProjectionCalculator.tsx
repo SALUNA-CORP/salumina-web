@@ -84,17 +84,16 @@ export function ProjectionCalculator() {
           <CardContent className="space-y-6">
             {/* Direct Referrals */}
             <div>
-              <label className="text-sm font-medium text-gray-700 flex items-center justify-between mb-2">
-                <span>Referidos Directos por Mes</span>
-                <span className="text-blue-600 font-bold">{directReferrals}</span>
+              <label className="text-sm font-medium text-gray-700 mb-2 block">
+                Referidos Directos por Mes
               </label>
               <input
-                type="range"
+                type="number"
                 min="1"
-                max="10"
+                max="100"
                 value={directReferrals}
-                onChange={(e) => setDirectReferrals(parseInt(e.target.value))}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                onChange={(e) => setDirectReferrals(parseInt(e.target.value) || 1)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg font-semibold"
               />
               <p className="text-xs text-gray-500 mt-1">
                 Personas que invitas directamente cada mes
@@ -103,18 +102,16 @@ export function ProjectionCalculator() {
 
             {/* Duplicate Rate */}
             <div>
-              <label className="text-sm font-medium text-gray-700 flex items-center justify-between mb-2">
-                <span>Tasa de Duplicación</span>
-                <span className="text-blue-600 font-bold">{duplicateRate}%</span>
+              <label className="text-sm font-medium text-gray-700 mb-2 block">
+                Tasa de Duplicación (%)
               </label>
               <input
-                type="range"
+                type="number"
                 min="0"
                 max="100"
-                step="5"
                 value={duplicateRate}
-                onChange={(e) => setDuplicateRate(parseInt(e.target.value))}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                onChange={(e) => setDuplicateRate(Math.min(100, Math.max(0, parseInt(e.target.value) || 0)))}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg font-semibold"
               />
               <p className="text-xs text-gray-500 mt-1">
                 % de tu red que duplica tu esfuerzo
@@ -123,17 +120,16 @@ export function ProjectionCalculator() {
 
             {/* Months */}
             <div>
-              <label className="text-sm font-medium text-gray-700 flex items-center justify-between mb-2">
-                <span>Proyección a Futuro</span>
-                <span className="text-blue-600 font-bold">{months} meses</span>
+              <label className="text-sm font-medium text-gray-700 mb-2 block">
+                Proyección a Futuro (meses)
               </label>
               <input
-                type="range"
-                min="3"
-                max="24"
+                type="number"
+                min="1"
+                max="36"
                 value={months}
-                onChange={(e) => setMonths(parseInt(e.target.value))}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                onChange={(e) => setMonths(Math.min(36, Math.max(1, parseInt(e.target.value) || 1)))}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg font-semibold"
               />
               <p className="text-xs text-gray-500 mt-1">
                 Horizonte de tiempo para la proyección
@@ -142,18 +138,16 @@ export function ProjectionCalculator() {
 
             {/* Average Commission */}
             <div>
-              <label className="text-sm font-medium text-gray-700 flex items-center justify-between mb-2">
-                <span>Comisión Promedio por Usuario</span>
-                <span className="text-blue-600 font-bold">${avgCommissionPerUser}</span>
+              <label className="text-sm font-medium text-gray-700 mb-2 block">
+                Comisión Promedio por Usuario ($)
               </label>
               <input
-                type="range"
-                min="5"
-                max="50"
-                step="5"
+                type="number"
+                min="1"
+                max="1000"
                 value={avgCommissionPerUser}
-                onChange={(e) => setAvgCommissionPerUser(parseInt(e.target.value))}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+                onChange={(e) => setAvgCommissionPerUser(Math.max(1, parseInt(e.target.value) || 1))}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg font-semibold"
               />
               <p className="text-xs text-gray-500 mt-1">
                 Ingreso promedio por usuario activo/mes
