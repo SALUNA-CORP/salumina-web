@@ -4,10 +4,11 @@ import { supabaseAdmin } from '@/lib/supabase/admin';
 // GET /api/pools/markets/[id] - Get single market with detailed stats
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const marketId = parseInt(params.id);
+    const { id } = await params;
+    const marketId = parseInt(id);
 
     if (isNaN(marketId)) {
       return NextResponse.json(
