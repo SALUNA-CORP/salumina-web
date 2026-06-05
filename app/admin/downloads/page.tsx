@@ -27,36 +27,36 @@ export default async function AdminDownloadsPage() {
   }
 
   const appInfo = {
-    version: '0.2.0',
-    versionCode: 3,
-    releaseDate: '2026-06-04',
+    version: '0.2.1',
+    versionCode: 4,
+    releaseDate: '2026-06-05',
     repoUrl: 'https://github.com/SALUNA-CORP/polybet-releases',
-    releaseUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/tag/v0.2.0',
+    releaseUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/tag/v0.2.1',
     latestReleaseUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/latest',
 
     platforms: {
       windows: {
         name: 'QUANTIXBET.Setup.0.2.0.exe',
         size: '212.44 MB',
-        url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/QUANTIXBET.Setup.0.2.0.exe',
-        checksumUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/CHECKSUMS.txt',
+        url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.1/QUANTIXBET.Setup.0.2.0.exe',
+        checksumUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.1/CHECKSUMS.txt',
       },
       android: {
-        name: 'quantixbet-v0.2.0.apk',
+        name: 'quantixbet-v0.2.1.apk',
         size: '3.07 MB',
         packageId: 'com.quantixbet.sports',
-        url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/quantixbet-v0.2.0.apk',
-        checksumUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.0/CHECKSUMS.txt',
+        url: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.1/quantixbet-v0.2.1.apk',
+        checksumUrl: 'https://github.com/SALUNA-CORP/polybet-releases/releases/download/v0.2.1/CHECKSUMS.txt',
       },
     },
 
     changelog: [
+      '🐛 Fix crash en Android al iniciar (v0.2.1)',
       '✨ Rebrand completo a QUANTIXBET',
       '🎨 Nuevo icono y diseño de interfaz',
       '📦 Package ID actualizado: com.quantixbet.sports',
       '🔗 Deep links actualizados: quantixbet://',
       '⚡ Mejoras de rendimiento y estabilidad',
-      '🔄 Sistema de auto-actualización mejorado',
     ],
   };
 
