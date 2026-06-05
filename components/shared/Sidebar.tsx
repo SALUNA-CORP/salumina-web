@@ -19,6 +19,7 @@ import {
   TrendingUp,
   Activity,
   Calculator,
+  Star,
 } from 'lucide-react';
 
 interface NavItem {
@@ -34,6 +35,7 @@ interface SidebarProps {
 const userNavItems: NavItem[] = [
   { href: '/dashboard', label: 'Dashboard', icon: Home },
   { href: '/dashboard/pools', label: 'Market Pools', icon: TrendingUp },
+  { href: '/dashboard/pools/favorites', label: 'Favoritos', icon: Star },
   { href: '/dashboard/subscription', label: 'Suscripción', icon: CreditCard },
   { href: '/dashboard/network', label: 'Red Binaria', icon: Network },
   { href: '/dashboard/network/performance', label: 'Performance MLM', icon: Activity },
