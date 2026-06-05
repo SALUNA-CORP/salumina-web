@@ -5,7 +5,7 @@ import { supabaseAdmin } from '@/lib/supabase/admin';
 // POST - Update training progress
 export async function POST(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const supabase = await createClient();
@@ -22,7 +22,8 @@ export async function POST(
     const body = await request.json();
     const { progress_percentage, time_spent_minutes, is_completed } = body;
 
-    const materialId = parseInt(params.id);
+    const { id } = await params;
+    const materialId = parseInt(id);
 
     // Check if progress record exists
     const { data: existing } = await supabaseAdmin

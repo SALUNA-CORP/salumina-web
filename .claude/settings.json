@@ -24,7 +24,8 @@
       "Bash(mkdir -p \"c:\\\\Users\\\\frane\\\\Proyect\\\\Proyectos React\\\\SALUMINA-WEB\\\\app\\\\api\\\\training\\\\[id]\")",
       "Bash(mkdir -p \"c:\\\\Users\\\\frane\\\\Proyect\\\\Proyectos React\\\\SALUMINA-WEB\\\\app\\\\api\\\\training\\\\[id]\\\\progress\")",
       "Bash(mkdir -p \"c:\\\\Users\\\\frane\\\\Proyect\\\\Proyectos React\\\\SALUMINA-WEB\\\\app\\\\dashboard\\\\training\\\\[id]\")",
-      "Bash(grep -E \"\\\\.\\(tsx|ts\\)$\")"
+      "Bash(grep -E \"\\\\.\\(tsx|ts\\)$\")",
+      "Bash(npm install *)"
     ],
     "additionalDirectories": [
       "c:\\Users\\frane\\Proyect\\Proyectos React\\SALUMINA-WEB\\.next",
