@@ -65,8 +65,8 @@ export default async function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
       <LandingHero />
-      <LandingPoolsShowcase />
       <LandingMarketsPreview markets={marketsWithStats} />
+      <LandingPoolsShowcase />
       <LandingFeatures />
       <LandingPricing
         basePrice={basePrice}
