@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { market_id, alert_type, threshold_value, notification_method } = body;
+    const { market_id, alert_type, threshold_value } = body;
 
     // Validate required fields
     if (!market_id || !alert_type) {
@@ -76,6 +76,16 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Tipo de alerta inválido' }, { status: 400 });
     }
 
+    // Build conditions object based on alert type
+    const conditions: any = {};
+    if (threshold_value && alert_type === 'odds_change') {
+      conditions.percentage_change = threshold_value;
+    } else if (threshold_value && alert_type === 'pool_threshold') {
+      conditions.threshold_amount = threshold_value;
+    } else if (threshold_value && alert_type === 'closing_soon') {
+      conditions.hours_before_close = threshold_value;
+    }
+
     // Create alert
     const { data: alert, error } = await supabaseAdmin
       .from('market_alerts')
@@ -83,8 +93,7 @@ export async function POST(request: NextRequest) {
         user_id: user.id,
         market_id,
         alert_type,
-        threshold_value,
-        notification_method: notification_method || 'in_app',
+        conditions,
         is_active: true,
       })
       .select()

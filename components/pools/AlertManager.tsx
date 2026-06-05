@@ -8,7 +8,11 @@ interface Alert {
   id: number;
   market_id: number;
   alert_type: string;
-  threshold_value: number | null;
+  conditions: {
+    percentage_change?: number;
+    threshold_amount?: number;
+    hours_before_close?: number;
+  };
   is_active: boolean;
   triggered_at: string | null;
   created_at: string;
@@ -54,13 +58,14 @@ export function AlertManager({ alerts, onRefresh }: AlertManagerProps) {
   };
 
   const getAlertDescription = (alert: Alert) => {
+    const { conditions } = alert;
     switch (alert.alert_type) {
       case 'odds_change':
-        return `Notificar cuando las cuotas cambien más de ${alert.threshold_value}%`;
+        return `Notificar cuando las cuotas cambien más de ${conditions?.percentage_change || 0}%`;
       case 'pool_threshold':
-        return `Notificar cuando el pool alcance $${alert.threshold_value?.toLocaleString()}`;
+        return `Notificar cuando el pool alcance $${conditions?.threshold_amount?.toLocaleString() || 0}`;
       case 'closing_soon':
-        return `Notificar ${alert.threshold_value} horas antes del cierre`;
+        return `Notificar ${conditions?.hours_before_close || 0} horas antes del cierre`;
       case 'status_change':
         return 'Notificar cuando el mercado cambie de estado';
       default:

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { PlaceBetModal } from './PlaceBetModal';
+import { FavoriteButton } from '../FavoriteButton';
 import { Calendar, DollarSign, Users, TrendingUp, Clock } from 'lucide-react';
 import type { MarketWithStats } from '@/types/pools';
 
@@ -91,6 +92,7 @@ export function PoolsMarketsList({ markets }: PoolsMarketsListProps) {
                     <p className="text-gray-600 text-sm">{market.description}</p>
                   )}
                 </div>
+                <FavoriteButton marketId={market.id} />
               </div>
 
               {/* Stats Row */}
