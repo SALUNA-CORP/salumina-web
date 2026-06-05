@@ -88,12 +88,21 @@ export function ProjectionCalculator() {
                 Referidos Directos por Mes
               </label>
               <input
-                type="number"
-                min="1"
-                max="100"
+                type="text"
+                inputMode="numeric"
                 value={directReferrals}
-                onChange={(e) => setDirectReferrals(parseInt(e.target.value) || 1)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg font-semibold"
+                onChange={(e) => {
+                  const val = e.target.value.replace(/\D/g, '');
+                  if (val === '') return;
+                  const num = Math.min(100, Math.max(1, parseInt(val) || 1));
+                  setDirectReferrals(num);
+                }}
+                onBlur={(e) => {
+                  if (e.target.value === '' || parseInt(e.target.value) < 1) {
+                    setDirectReferrals(1);
+                  }
+                }}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg font-semibold [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               />
               <p className="text-xs text-gray-500 mt-1">
                 Personas que invitas directamente cada mes
@@ -106,12 +115,19 @@ export function ProjectionCalculator() {
                 Tasa de Duplicación (%)
               </label>
               <input
-                type="number"
-                min="0"
-                max="100"
+                type="text"
+                inputMode="numeric"
                 value={duplicateRate}
-                onChange={(e) => setDuplicateRate(Math.min(100, Math.max(0, parseInt(e.target.value) || 0)))}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg font-semibold"
+                onChange={(e) => {
+                  const val = e.target.value.replace(/\D/g, '');
+                  if (val === '') {
+                    setDuplicateRate(0);
+                    return;
+                  }
+                  const num = Math.min(100, parseInt(val) || 0);
+                  setDuplicateRate(num);
+                }}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg font-semibold [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               />
               <p className="text-xs text-gray-500 mt-1">
                 % de tu red que duplica tu esfuerzo
@@ -124,12 +140,21 @@ export function ProjectionCalculator() {
                 Proyección a Futuro (meses)
               </label>
               <input
-                type="number"
-                min="1"
-                max="36"
+                type="text"
+                inputMode="numeric"
                 value={months}
-                onChange={(e) => setMonths(Math.min(36, Math.max(1, parseInt(e.target.value) || 1)))}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg font-semibold"
+                onChange={(e) => {
+                  const val = e.target.value.replace(/\D/g, '');
+                  if (val === '') return;
+                  const num = Math.min(36, Math.max(1, parseInt(val) || 1));
+                  setMonths(num);
+                }}
+                onBlur={(e) => {
+                  if (e.target.value === '' || parseInt(e.target.value) < 1) {
+                    setMonths(1);
+                  }
+                }}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg font-semibold [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               />
               <p className="text-xs text-gray-500 mt-1">
                 Horizonte de tiempo para la proyección
@@ -142,12 +167,21 @@ export function ProjectionCalculator() {
                 Comisión Promedio por Usuario ($)
               </label>
               <input
-                type="number"
-                min="1"
-                max="1000"
+                type="text"
+                inputMode="numeric"
                 value={avgCommissionPerUser}
-                onChange={(e) => setAvgCommissionPerUser(Math.max(1, parseInt(e.target.value) || 1))}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg font-semibold"
+                onChange={(e) => {
+                  const val = e.target.value.replace(/\D/g, '');
+                  if (val === '') return;
+                  const num = Math.min(1000, Math.max(1, parseInt(val) || 1));
+                  setAvgCommissionPerUser(num);
+                }}
+                onBlur={(e) => {
+                  if (e.target.value === '' || parseInt(e.target.value) < 1) {
+                    setAvgCommissionPerUser(1);
+                  }
+                }}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-lg font-semibold [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               />
               <p className="text-xs text-gray-500 mt-1">
                 Ingreso promedio por usuario activo/mes

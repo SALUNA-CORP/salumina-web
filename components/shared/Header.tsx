@@ -22,11 +22,15 @@ export function Header({ user }: HeaderProps) {
     router.refresh();
   };
 
+  // Extract username from email
+  const username = user?.email?.split('@')[0] || 'Usuario';
+  const displayName = username.charAt(0).toUpperCase() + username.slice(1);
+
   return (
     <header className="bg-white border-b border-gray-200 px-6 py-4">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Salumina</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Hola, {displayName}</h1>
           <p className="text-sm text-gray-500">
             {user?.role === 'superadmin' ? 'Panel de Administrador' : 'Panel de Usuario'}
           </p>

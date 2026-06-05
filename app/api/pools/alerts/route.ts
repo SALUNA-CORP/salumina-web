@@ -26,7 +26,6 @@ export async function GET(request: NextRequest) {
           category,
           status,
           event_date,
-          pool_total,
           created_at
         )
       `)
