@@ -71,6 +71,7 @@ export interface Market {
   opens_at: string;
   closes_at: string;
   event_date: string;
+  betting_closes_at?: string; // When betting closes (can be different from event_date)
   status: MarketStatus;
   winning_option?: number;
   resolution_source?: string;

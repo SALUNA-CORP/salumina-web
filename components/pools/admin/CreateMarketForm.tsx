@@ -20,6 +20,7 @@ export function CreateMarketForm() {
     opens_at: '',
     closes_at: '',
     event_date: '',
+    betting_closes_at: '', // When betting closes (for live events)
     min_bet: 1,
     max_bet: 100,
     max_total_bet: 500,
@@ -115,12 +116,14 @@ export function CreateMarketForm() {
     const opensAt = new Date(now.getTime() + 1 * 60 * 60 * 1000); // In 1 hour
     const closesAt = new Date(now.getTime() + 24 * 60 * 60 * 1000); // In 24 hours
     const eventDate = new Date(now.getTime() + 25 * 60 * 60 * 1000); // In 25 hours
+    const bettingCloses = new Date(eventDate.getTime() - 15 * 60 * 1000); // 15 min before event
 
     setFormData({
       ...formData,
       opens_at: opensAt.toISOString().slice(0, 16),
       closes_at: closesAt.toISOString().slice(0, 16),
       event_date: eventDate.toISOString().slice(0, 16),
+      betting_closes_at: bettingCloses.toISOString().slice(0, 16),
     });
   };
 
@@ -219,7 +222,7 @@ export function CreateMarketForm() {
           </div>
 
           {/* Dates */}
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Abre el *
@@ -244,6 +247,9 @@ export function CreateMarketForm() {
                 required
               />
             </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Fecha del Evento *
@@ -255,6 +261,21 @@ export function CreateMarketForm() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 required
               />
+              <p className="text-xs text-gray-500 mt-1">Cuándo sucede el evento</p>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Apuestas Cierran en
+              </label>
+              <input
+                type="datetime-local"
+                value={formData.betting_closes_at}
+                onChange={(e) => setFormData({ ...formData, betting_closes_at: e.target.value })}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+              <p className="text-xs text-gray-500 mt-1">
+                Cuándo se cierra la aceptación de apuestas (ej: 15 min antes del evento)
+              </p>
             </div>
           </div>
 
@@ -263,7 +284,7 @@ export function CreateMarketForm() {
             onClick={setDefaultDates}
             className="text-sm text-blue-600 hover:text-blue-700"
           >
-            Establecer fechas por defecto (abre en 1h, cierra en 24h)
+            Establecer fechas por defecto (abre en 1h, apuestas cierran 15 min antes del evento)
           </button>
 
           {/* Limits */}
