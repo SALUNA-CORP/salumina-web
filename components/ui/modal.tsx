@@ -39,39 +39,41 @@ export function Modal({
       />
 
       {/* Modal */}
-      <div className="relative bg-white rounded-lg shadow-xl max-w-md w-full mx-4 p-6 animate-fade-in">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+      <div className="relative bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] flex flex-col animate-fade-in">
+        {/* Header - Fixed */}
+        <div className="flex items-center justify-between p-6 pb-4 border-b border-gray-200 flex-shrink-0">
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+            {description && (
+              <p className="text-sm text-gray-600 mt-1">{description}</p>
+            )}
+          </div>
           <button
             onClick={onClose}
-            className="p-1 hover:bg-gray-100 rounded transition-colors"
+            className="p-1 hover:bg-gray-100 rounded transition-colors ml-4"
             disabled={loading}
           >
             <X className="w-5 h-5 text-gray-500" />
           </button>
         </div>
 
-        {/* Description */}
-        {description && (
-          <p className="text-sm text-gray-600 mb-6">{description}</p>
-        )}
-
-        {/* Children Content */}
+        {/* Children Content - Scrollable */}
         {children && (
-          <div className="mb-6">{children}</div>
+          <div className="overflow-y-auto flex-1 p-6">
+            {children}
+          </div>
         )}
 
-        {/* Actions */}
-        <div className="flex gap-3 justify-end">
-          <Button
-            variant="outline"
-            onClick={onClose}
-            disabled={loading}
-          >
-            {cancelText}
-          </Button>
-          {onConfirm && (
+        {/* Actions - Fixed at bottom (only if onConfirm exists) */}
+        {onConfirm && (
+          <div className="flex gap-3 justify-end p-6 pt-4 border-t border-gray-200 flex-shrink-0">
+            <Button
+              variant="outline"
+              onClick={onClose}
+              disabled={loading}
+            >
+              {cancelText}
+            </Button>
             <Button
               variant={variant === 'destructive' ? 'destructive' : 'default'}
               onClick={onConfirm}
@@ -79,8 +81,8 @@ export function Modal({
             >
               {loading ? 'Procesando...' : confirmText}
             </Button>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
