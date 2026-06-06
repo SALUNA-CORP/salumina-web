@@ -71,13 +71,16 @@ INSERT INTO bets (
 -- =====================================================
 SELECT
   b.id,
-  b.user_id,
   b.option_index,
   m.options[b.option_index + 1] as option_name,
   b.amount,
-  b.status
+  b.commission_rate,
+  b.status,
+  u.email as apostador,
+  b.created_at
 FROM bets b
 JOIN markets m ON b.market_id = m.id
+LEFT JOIN auth.users u ON b.user_id = u.id
 WHERE b.market_id = 1
 ORDER BY b.option_index, b.created_at;
 
@@ -111,6 +114,44 @@ WHERE market_id = 1 AND status = 'active';
 -- Deberías ver:
 -- total_bets | total_pool
 -- 8          | 260000
+
+-- =====================================================
+-- VER TODAS LAS APUESTAS CON DETALLES
+-- =====================================================
+SELECT
+  b.id,
+  b.option_index,
+  m.options[b.option_index + 1] as option_name,
+  b.amount,
+  b.commission_rate,
+  b.is_premium,
+  b.status,
+  u.email as apostador
+FROM bets b
+JOIN markets m ON b.market_id = m.id
+LEFT JOIN auth.users u ON b.user_id = u.id
+WHERE b.market_id = 1
+ORDER BY b.option_index, b.created_at;
+
+-- =====================================================
+-- VER RESUMEN POR OPCIÓN
+-- =====================================================
+SELECT
+  b.option_index,
+  m.options[b.option_index + 1] as option_name,
+  COUNT(*) as num_apuestas,
+  SUM(b.amount) as total_apostado,
+  ROUND(AVG(b.amount), 2) as promedio_apuesta,
+  ROUND(
+    (SUM(b.amount)::DECIMAL /
+     (SELECT SUM(amount) FROM bets WHERE market_id = 1 AND status = 'active') * 100),
+    2
+  ) as porcentaje_pool
+FROM bets b
+JOIN markets m ON b.market_id = m.id
+WHERE b.market_id = 1 AND b.status = 'active'
+GROUP BY b.option_index, m.options[b.option_index + 1]
+ORDER BY b.option_index;
 
 -- =====================================================
 -- LIMPIAR SI NECESITAS EMPEZAR DE NUEVO
