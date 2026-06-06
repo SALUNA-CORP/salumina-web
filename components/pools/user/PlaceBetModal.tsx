@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/toast';
 import { DollarSign, TrendingUp, AlertCircle, Clock, Users, PieChart } from 'lucide-react';
 import type { MarketWithStats } from '@/types/pools';
+import { formatUSD } from '@/lib/utils/currency';
 
 interface PlaceBetModalProps {
   market: MarketWithStats;
@@ -195,7 +196,7 @@ export function PlaceBetModal({ market, onClose, onSuccess }: PlaceBetModalProps
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-xs text-blue-700">Balance Disponible</p>
-                <p className="text-xl font-bold text-blue-900">${wallet.balance.toFixed(2)}</p>
+                <p className="text-xl font-bold text-blue-900">{formatUSD(wallet.balance, false)}</p>
               </div>
               <DollarSign className="w-6 h-6 text-blue-600" />
             </div>
@@ -210,7 +211,7 @@ export function PlaceBetModal({ market, onClose, onSuccess }: PlaceBetModalProps
               <span className="text-sm font-medium text-purple-800">Pool Total</span>
             </div>
             <p className="text-2xl font-bold text-purple-900 mb-2">
-              ${poolStats.total_pool.toLocaleString()}
+              {formatUSD(poolStats.total_pool, false)}
             </p>
             <div className="grid grid-cols-2 gap-2 text-xs">
               {market.options.map((option: string, index: number) => {
@@ -224,7 +225,7 @@ export function PlaceBetModal({ market, onClose, onSuccess }: PlaceBetModalProps
                   <div key={index} className="bg-white rounded p-2">
                     <p className="font-medium text-gray-900 truncate">{option}</p>
                     <p className="text-purple-700 font-semibold">
-                      ${optionAmount.toLocaleString()}
+                      {formatUSD(optionAmount, false)}
                     </p>
                     <p className="text-gray-500">
                       {percentage}% • {bets} apuestas
@@ -292,8 +293,8 @@ export function PlaceBetModal({ market, onClose, onSuccess }: PlaceBetModalProps
             />
           </div>
           <div className="flex justify-between mt-1 text-xs text-gray-500">
-            <span>Mínimo: ${market.min_bet}</span>
-            <span>Máximo: ${market.max_bet}</span>
+            <span>Mínimo: {formatUSD(market.min_bet, false)}</span>
+            <span>Máximo: {formatUSD(market.max_bet, false)}</span>
           </div>
 
           {/* Quick amounts */}
@@ -322,10 +323,10 @@ export function PlaceBetModal({ market, onClose, onSuccess }: PlaceBetModalProps
                 <div className="space-y-2">
                   <div className="flex justify-between items-baseline">
                     <span className="text-lg font-bold text-green-900">
-                      ${netPayout.toFixed(2)}
+                      {formatUSD(netPayout, false)}
                     </span>
                     <span className="text-sm text-green-700">
-                      Ganancia: <span className="font-semibold">+${profit.toFixed(2)}</span>
+                      Ganancia: <span className="font-semibold">+{formatUSD(profit, false)}</span>
                     </span>
                   </div>
 
