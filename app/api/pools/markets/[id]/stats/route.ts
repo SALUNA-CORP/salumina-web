@@ -31,7 +31,7 @@ export async function GET(
       .from('bets')
       .select('option_index, amount')
       .eq('market_id', marketId)
-      .eq('status', 'pending');
+      .eq('status', 'active');
 
     if (betsError) {
       console.error('Error fetching bets:', betsError);
