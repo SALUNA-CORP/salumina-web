@@ -31,11 +31,13 @@ INSERT INTO bets (
   market_id,
   option_index,
   amount,
+  commission_rate,
+  is_premium,
   status
 ) VALUES
-  ('4437e1fa-e501-4507-9df4-286721ecf92b', 1, 0, 50000, 'active'),
-  ('9d2270a3-2beb-429d-a320-a9aada38d488', 1, 0, 30000, 'active'),
-  ('3a727e32-ff02-465f-925c-c2c4edb7683a', 1, 0, 20000, 'active');
+  ('4437e1fa-e501-4507-9df4-286721ecf92b', 1, 0, 50000, 0.06, false, 'active'),
+  ('9d2270a3-2beb-429d-a320-a9aada38d488', 1, 0, 30000, 0.06, false, 'active'),
+  ('3a727e32-ff02-465f-925c-c2c4edb7683a', 1, 0, 20000, 0.06, false, 'active');
 
 -- Apuestas en Empate (opción 1)
 INSERT INTO bets (
@@ -43,10 +45,12 @@ INSERT INTO bets (
   market_id,
   option_index,
   amount,
+  commission_rate,
+  is_premium,
   status
 ) VALUES
-  ('4437e1fa-e501-4507-9df4-286721ecf92b', 1, 1, 40000, 'active'),
-  ('3a727e32-ff02-465f-925c-c2c4edb7683a', 1, 1, 25000, 'active');
+  ('4437e1fa-e501-4507-9df4-286721ecf92b', 1, 1, 40000, 0.06, false, 'active'),
+  ('3a727e32-ff02-465f-925c-c2c4edb7683a', 1, 1, 25000, 0.06, false, 'active');
 
 -- Apuestas en Atlético Nacional (opción 2)
 INSERT INTO bets (
@@ -54,11 +58,13 @@ INSERT INTO bets (
   market_id,
   option_index,
   amount,
+  commission_rate,
+  is_premium,
   status
 ) VALUES
-  ('4437e1fa-e501-4507-9df4-286721ecf92b', 1, 2, 35000, 'active'),
-  ('9d2270a3-2beb-429d-a320-a9aada38d488', 1, 2, 45000, 'active'),
-  ('3a727e32-ff02-465f-925c-c2c4edb7683a', 1, 2, 15000, 'active');
+  ('4437e1fa-e501-4507-9df4-286721ecf92b', 1, 2, 35000, 0.06, false, 'active'),
+  ('9d2270a3-2beb-429d-a320-a9aada38d488', 1, 2, 45000, 0.06, false, 'active'),
+  ('3a727e32-ff02-465f-925c-c2c4edb7683a', 1, 2, 15000, 0.06, false, 'active');
 
 -- =====================================================
 -- VERIFICAR QUE SE INSERTARON
