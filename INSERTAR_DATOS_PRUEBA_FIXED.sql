@@ -72,7 +72,7 @@ INSERT INTO bets (
 SELECT
   b.id,
   b.option_index,
-  m.options[b.option_index + 1] as option_name,
+  m.options->b.option_index as option_name,
   b.amount,
   b.commission_rate,
   b.status,
@@ -138,7 +138,7 @@ ORDER BY b.option_index, b.created_at;
 -- =====================================================
 SELECT
   b.option_index,
-  m.options[b.option_index + 1] as option_name,
+  m.options->b.option_index as option_name,
   COUNT(*) as num_apuestas,
   SUM(b.amount) as total_apostado,
   ROUND(AVG(b.amount), 2) as promedio_apuesta,
@@ -150,7 +150,7 @@ SELECT
 FROM bets b
 JOIN markets m ON b.market_id = m.id
 WHERE b.market_id = 1 AND b.status = 'active'
-GROUP BY b.option_index, m.options[b.option_index + 1]
+GROUP BY b.option_index, m.options->b.option_index
 ORDER BY b.option_index;
 
 -- =====================================================
