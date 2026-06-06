@@ -90,25 +90,19 @@ export default async function PoolsDashboardPage() {
           <p className="text-purple-100 text-xs sm:text-sm">Historial y mercados activos</p>
         </Link>
 
-        <Link
-          href="/dashboard/pools/markets"
-          className="bg-gradient-to-br from-green-600 to-green-700 text-white rounded-lg p-4 sm:p-6 hover:shadow-lg transition-shadow sm:col-span-2 md:col-span-1"
-        >
+        <div className="bg-gradient-to-br from-green-600 to-green-700 text-white rounded-lg p-4 sm:p-6 sm:col-span-2 md:col-span-1">
           <h3 className="font-semibold text-base sm:text-lg mb-1">🎯 Todos los Mercados</h3>
-          <p className="text-green-100 text-xs sm:text-sm">Explora todas las opciones</p>
-        </Link>
+          <p className="text-green-100 text-xs sm:text-sm">Explora todas las opciones abajo</p>
+        </div>
       </div>
 
       {/* Markets List */}
       <div>
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Mercados Disponibles</h2>
-          <Link
-            href="/dashboard/pools/markets"
-            className="text-blue-600 hover:text-blue-700 font-medium text-sm sm:text-base"
-          >
-            Ver todos →
-          </Link>
+          <span className="text-gray-500 text-sm">
+            {marketsWithStats.length} mercados disponibles
+          </span>
         </div>
 
         <PoolsMarketsList markets={marketsWithStats} />
